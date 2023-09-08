@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ post.title }}</h1>
+  <p>Posted by {{ post.author }} on {{ post.timestamp|date }}</p>
+  <div>{{ post.content|safe }}</div> <!-- Use safe filter to render HTML content -->
+
+  <a href="{% url 'blog-list' %}">Back to Blog List</a>
+{% endblock %}

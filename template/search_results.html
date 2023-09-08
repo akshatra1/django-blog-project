@@ -1,0 +1,16 @@
+<!-- search_results.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Search Results</h1>
+    
+    
+
+    <ul>
+        {% for post in results %}
+            <li><a href="{% url 'blog-detail' post.pk %}">{{ post.title }}</a></li>
+        {% empty %}
+            <li>No results found.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
